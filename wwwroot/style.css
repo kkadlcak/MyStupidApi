@@ -1,0 +1,115 @@
+﻿:root {
+    --none: rgba(0,0,0,0) --gray-0: rgb(180, 180, 180);
+    --gray-1: rgb(160, 160, 160);
+    --gray-2: rgb(140, 140, 140);
+    --gray-3: rgb(120, 120, 120);
+    --gray-4: rgb(100, 100, 100);
+    --gray-5: rgb(80, 80, 80);
+    --gray-6: rgb(60, 60, 60);
+    --gray-7: rgb(40, 40, 40);
+    --arrow: "==>";
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+    nav > * {
+        border-radius: 10px;
+        padding: 5px;
+        background-color: var(--gray-1);
+    }
+
+
+.dropdown-menu {
+    background-color: var(--gray-1);
+}
+
+main {
+    padding: 5px;
+    min-height: 800px;
+    height: fit-content;
+    background-color: var(--gray-7);
+}
+
+    main > div {
+        margin: 10px;
+    }
+
+header {
+    height: 100px;
+}
+
+.content {
+    height: 4000px;
+    background-color: var(--gray-5);
+}
+
+.tabs {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    min-height: 200px;
+    height: fit-content;
+    background-color: var(--none);
+}
+
+    .tabs > * {
+        margin: 10px 0;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--gray-3);
+    }
+
+    .tabs .ended {
+        background-color: var(--gray-4);
+    }
+
+.ended .AddButton {
+    display: none;
+}
+
+#home {
+    display: block;
+}
+
+.add {
+    height: 4100px;
+    background-color: var(--gray-6);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    padding: 10px;
+}
+
+.btn {
+    margin: 5px 0;
+    background-color: var(--gray-4);
+}
+
+#sale {
+    color: darkred;
+}
+
+input {
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--gray-2);
+}
+
+body {
+    background-color: var(--gray-7);
+}

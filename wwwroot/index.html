@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>.net konference</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon"
+          href="https://a06a0724aa.clvaw-cdnwnd.com/d78b53fb5c87694574586575ed96b520/200000412-8256082562/1ITG_logo_01color_smaller-1.png?ph=a06a0724aa">
+    <link rel="stylesheet" href="./style.css">
+    <link href="./main.js" type="text/javascript" />
+    <template id="saleTemp">
+        <div class="d-grid">
+            <div class="col-10">
+                <h2 id="NameId"></h2>
+                <h2 id="sale"></h2>
+                <h3 id="itStarts">starts at </h3>
+                <h3 id="itEnds">ends at </h3>
+                <h3 id="cat">category: </h3>
+            </div>
+            <div class="d-grid">
+                <button id="Idd" class="btn btn-lg AddButton" onclick="">Add</button>
+                <button id="DDi" class="btn btn-lg AddButton" onclick="">remove</button>
+            </div>
+        </div>
+    </template>
+</head>
+<body id="top">
+    <!--
+    <header class="container header">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <ul>
+                            <li>
+                                <button onclick="GetItems()">get items</button>
+                            </li>
+                            <li>
+                                <button onclick="GetUsers()">get users</button>
+                            </li>
+                            <li>
+                                <input type="text" name="Get item by id" id="GetSaleById" />
+                                <button onclick="GetItemById()">get Item</button>
+                            </li>
+                            <li>
+                                <input type="text" name="Get item by id" id="GetUserById" />
+                                <button onclick="GetUserById()">get User</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <ul>
+                            <li>
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name" placeholder="test">
+                            </li>
+                            <li>
+                                <label for="sale">sale percentage:</label>
+                                <input type="text" id="sale" name="sale" placeholder="Sale">
+                            </li>
+                            <li>
+                                <label for="saleStart">start:</label>
+                                <input type="date" id="SaleS" name="saleStart" placeholder="Start">
+                            </li>
+                            <li>
+                                <label for="saleEnd">end:</label>
+                                <input type="date" id="SaleE" name="saleEnd" placeholder="End">
+                            </li>
+                            <li>
+                                <label for="Category">category:</label>
+                                <input type="text" id="Category" name="Category" placeholder="category">
+                            </li>
+                            <li>
+                                <button onclick="AddItem()">Add</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <ul>
+                            <li>
+                                <label for="Uname">name:</label>
+                                <input type="text" id="UserName" name="Uname" placeholder="name">
+                            </li>
+                            <li>
+                                <label for="email">e-mail:</label>
+                                <input type="text" id="email" name="email" placeholder="e-mail">
+                            </li>
+                            <li>
+                                <label for="password">password:</label>
+                                <input type="password" id="password" name="password" placeholder="">
+                            </li>
+                            <li>
+                                <button onclick="AddUser()">Add</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <ul>
+                            <li>
+                                <label for="userAddId">user Id:</label>
+                                <input type="number" id="userAddId" name="userAddId" placeholder="0">
+                            </li>
+                            <li>
+                                <label for="saleAddId">sale Id:</label>
+                                <input type="number" id="saleAddId" name="saleAddId" placeholder="0">
+                            </li>
+                            <li>
+                                <button onclick="AddSaleToUser()">Add</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <ul class="container" id="data">
+        </ul>
+    </main>
+        -->
+    <nav class="navbar navbar-expand-md fixed-top justify-content-center navbar-light">
+        <div class="col-5 navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#top">
+                        <img src="home-icon.png" alt="home" style="width:50px;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#top" onclick='switchTab("home")'>home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">categories</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick='switchTab("games")'>games</a></li>
+                        <li><a class="dropdown-item" onclick='switchTab("holiday")'>holyday</a></li>
+                        <li><a class="dropdown-item" onclick='switchTab("idk")'>idk</a></li>
+                        <li><a class="dropdown-item" onclick='switchTab("duno")'>duno</a></li>
+                        <li><a class="dropdown-item" onclick='switchTab("other")'>other</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" id="AdminSwitch" onclick='switchTab("Admin")'>admin</a></li>
+            </ul>
+            <ul class="order-3 navbar-nav">
+                <li class="nav-item dropdown dropdown-center">
+                    <a class="nav-link dropdown-toggle" role="button" id="login" data-bs-auto-close="outside" data-bs-toggle="dropdown">login</a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <ul id="loginMenu">
+                            <li><input id="logName" value="test" type="text" placeholder="username"></li>
+                            <li><input id="logPass" type="password" placeholder="password"></li>
+                            <li class="d-grid d-md-flex gap-2">
+                                <button class="btn col" onclick="Login(document.getElementById('logName').value, document.getElementById('logPass').value)">login</button>
+                                <button class="btn col" onclick="SwitchSign('singupMenu')">sign up</button>
+                            </li>
+                        </ul>
+                        <ul id="singupMenu" style="display:none;">
+                            <li><input id="signName" type="text" placeholder="username"></li>
+                            <li><input id="signEmail" type="text" placeholder="email"></li>
+                            <li><input id="signPass" type="password" placeholder="password"></li>
+                            <li><input id="signPassValid" type="password" placeholder="password again"></li>
+                            <li><input id="AdminPass" type="password" placeholder="admin password"></li>
+                            <li class="d-grid d-md-flex gap-2">
+                                <button class="btn col" onclick="SignUp(document.getElementById('signName').value,document.getElementById('signEmail').value,document.getElementById('signPass').value,document.getElementById('AdminPass').value, document.getElementById('signPassValid').value)">Sign up</button>
+                                <button class="btn col" onclick="SwitchSign('loginMenu')">to signin</button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" id="Account" data-bs-toggle="dropdown">account</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Account">
+                        <li class="d-grid"><button onclick="UserItems()" class="btn col">your items</button></li>
+                        <li class="d-grid"><button onclick="logoff()" class="btn col">log off</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container-fluid row justify-content-center">
+        <div class="add col">
+
+        </div>
+        <div class="col-7">
+            <header>
+            </header>
+            <div class="content ">
+                <div id="home" class="tabs">
+                    <h1>
+                        this is us
+                    </h1>
+                </div>
+                <div id="games" class="tabs">
+
+                </div>
+                <div id="holiday" class="tabs">
+
+                </div>
+                <div id="idk" class="tabs">
+
+                </div>
+                <div id="duno" class="tabs">
+
+                </div>
+                <div id="other" class="tabs">
+
+                </div>
+                <div id="Users" class="tabs">
+
+                </div>
+                <div id="Admin">
+
+                </div>
+            </div>
+        </div>
+        <div class="add col">
+
+        </div>
+    </main>
+    <footer class="footer">
+    </footer>
+    <script src="./main.js"></script>
+    <script>
+        login()
+        tryData();
+        switchTab("home");
+    </script>
+</body>
+
+</html>
